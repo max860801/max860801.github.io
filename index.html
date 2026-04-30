@@ -1,14 +1,77 @@
-<html>
+<html lang="zh-Hant">
 <head>
-<title>初戀之驢的報恩</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初戀之驢的報恩</title>
 <style>
     img { display: block; border: 0; }
     body { background-color: #FFFFFF; }
 	table { margin-left: auto; margin-right: auto;}
+    font-family { "Microsoft JhengHei", sans-serif; overflow-x: hidden;}
+
+	/* 第一屏：開始閱讀區塊 */
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 妳也可以將背景色換成妳的海報圖：background: url('images/poster.jpg') center/cover; */
+            background: linear-gradient(135deg, #FFB7B2 0%, #B2E2F2 100%); 
+            color: white;
+            text-align: center;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.1);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-start {
+            padding: 18px 50px;
+            background-color: white;
+            color: #FFB7B2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            background-color: #fff9f9;
+        }
 </style>
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <audio id="myAudio" loop>
+        <!-- 請確保妳有上傳 bgm.mp3 到 GitHub 根目錄 -->
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+<!-- 2. 開始閱讀區塊 (Hero Section) -->
+    <div class="hero-section">
+        <h1>九年後的初戀</h1>
+        <p>一段跨越十載光陰的浪漫史，從那次火車上的意外開始...</p>
+        <a href="#comic-start" class="btn-start" onclick="playMusic()">開始閱讀</a>
+    </div>
+
+    <!-- 3. 漫畫圖片表格區 -->
+    <!-- 這裡加入一個錨點，讓按鈕點擊後能跳轉到這裡 -->
+    <div id="comic-start"></div>
 <!-- Save for Web Slices (第一頁.png) -->
 <table id="___01" width="800" height="12800" border="0" cellpadding="0" cellspacing="0">
 	<tr>
@@ -258,5 +321,13 @@
 	
 </table>
 <!-- End Save for Web Slices -->
+<script>
+        function playMusic() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+            // 平滑捲動到漫畫開始位置
+            document.getElementById('comic-start').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
