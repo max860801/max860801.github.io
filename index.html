@@ -6,11 +6,11 @@
 <style>
         /* 基礎設定 */
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #FFFFFF;
-            font-family: "Microsoft JhengHei", sans-serif;
-            overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF;
+        font-family: "Microsoft JhengHei", sans-serif;
+        overflow-x: hidden; /* 確保不會出現左右捲軸 */
         }
 	/* 第一屏：開始閱讀區塊 */
         .hero-section {
@@ -61,17 +61,22 @@
         }
 	/* 漫畫圖片設定 */
         img {
-            display: block; /* 消除圖片間隙 */
-            border: 0;
-            width: 800px; /* 固定寬度 */
-            height: auto;
+        display: block;
+        border: 0;
+        /* 修改這裡：寬度設為 100%，並設定最大寬度為 800px */
+        width: 100%; 
+        max-width: 800px; 
+        height: auto;
         }
 
         /* 表格置中 */
         table {
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
+        margin: 0 auto;
+        border-collapse: collapse;
+        /* 修改這裡：寬度設為 100%，並限制最大寬度 */
+        width: 100%;
+        max-width: 800px;
+    }
 </style>
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
