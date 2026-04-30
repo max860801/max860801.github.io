@@ -59,6 +59,11 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
             background-color: #fff9f9;
         }
+	        .spacer-section {
+            width: 100%;
+            height: 70vh; /* 佔據螢幕 70% 的高度 */
+            background-color: #FFFFFF;
+        }
 	/* 漫畫圖片設定 */
         img {
         display: block;
@@ -88,12 +93,12 @@
     <div class="hero-section">
         <h1>初戀之驢的報恩</h1>
         <p>一段跨越光陰的浪漫史，從那次火車上的意外開始...</p>
-        <a href="#comic-start" class="btn-start" onclick="playMusic()">開始閱讀</a>
+        <a href="javascript:void(0)" class="btn-start" onclick="startReading()">開始閱讀</a>
     </div>
-
-    <!-- 3. 漫畫圖片表格區 -->
-    <!-- 這裡加入一個錨點，讓按鈕點擊後能跳轉到這裡 -->
-    <div id="comic-start"></div>
+	<!-- [第二屏] 純白留白緩衝區 (錨點位) -->
+    <div class="spacer-section" id="comic-start"></div>
+<!-- [第三屏] 漫畫本體 -->
+    <table border="0" cellpadding="0" cellspacing="0" align="center">
 <!-- Save for Web Slices (第一頁.png) -->
 <table id="___01" width="800" height="12800" border="0" cellpadding="0" cellspacing="0">
 	<tr>
@@ -344,11 +349,18 @@
 </table>
 <!-- End Save for Web Slices -->
 <script>
-        function playMusic() {
+        function startReading() {
+            // 播放背景音樂
             var audio = document.getElementById("myAudio");
-            audio.play();
-            // 平滑捲動到漫畫開始位置
-            document.getElementById('comic-start').scrollIntoView({ behavior: 'smooth' });
+            audio.play().catch(function(error) {
+                console.log("播放被瀏覽器阻擋:", error);
+            });
+
+            // 平滑捲動到緩衝空白區
+            document.getElementById('comic-start').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     </script>
 </body>
