@@ -4,11 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>初戀之驢的報恩</title>
 <style>
-    img { display: block; border: 0; }
-    body { background-color: #FFFFFF; }
-	table { margin-left: auto; margin-right: auto;}
-    font-family { "Microsoft JhengHei", sans-serif; overflow-x: hidden;}
-
+        /* 基礎設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            font-family: "Microsoft JhengHei", sans-serif;
+            overflow-x: hidden;
+        }
 	/* 第一屏：開始閱讀區塊 */
         .hero-section {
             width: 100%;
@@ -18,7 +21,8 @@
             justify-content: center;
             align-items: center;
             /* 妳也可以將背景色換成妳的海報圖：background: url('images/poster.jpg') center/cover; */
-            background: linear-gradient(135deg, #FFB7B2 0%, #B2E2F2 100%); 
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('images/poster.jpg') center/cover no-repeat;
             color: white;
             text-align: center;
             box-shadow: inset 0 0 100px rgba(0,0,0,0.1);
@@ -55,6 +59,19 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
             background-color: #fff9f9;
         }
+	/* 漫畫圖片設定 */
+        img {
+            display: block; /* 消除圖片間隙 */
+            border: 0;
+            width: 800px; /* 固定寬度 */
+            height: auto;
+        }
+
+        /* 表格置中 */
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
 </style>
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
@@ -64,8 +81,8 @@
     </audio>
 <!-- 2. 開始閱讀區塊 (Hero Section) -->
     <div class="hero-section">
-        <h1>九年後的初戀</h1>
-        <p>一段跨越十載光陰的浪漫史，從那次火車上的意外開始...</p>
+        <h1>初戀之驢的報恩</h1>
+        <p>一段跨越光陰的浪漫史，從那次火車上的意外開始...</p>
         <a href="#comic-start" class="btn-start" onclick="playMusic()">開始閱讀</a>
     </div>
 
